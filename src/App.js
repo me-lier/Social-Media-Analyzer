@@ -94,10 +94,10 @@ function App() {
     const handleSubmit = async () => {
         if (!inputValue.trim()) return;
 
-        const flowIdOrName = 'd5a7dfaf-b9ef-43e7-bddb-8ffc95fadbc1';
-        const langflowId = 'bae9525d-2db1-477d-b9a7-dc65c6f47f69';
-        const applicationToken = 'AstraCS:BbgnqAZcCZPWiKbStZhkiKPJ:fc8285f491039835f5d6eafe8596ad87a96b8f16acb9c490e10084ce46feb806';
-        const langflowClient = new LangflowClient('', applicationToken); // Empty base URL since we're using proxy
+        const flowIdOrName = process.env.REACT_APP_FLOW_ID;
+        const langflowId = process.env.REACT_APP_LANGFLOW_ID;
+        const applicationToken = process.env.REACT_APP_ASTRA_TOKEN;
+        const langflowClient = new LangflowClient('', applicationToken);
 
         try {
             setIsLoading(true);
